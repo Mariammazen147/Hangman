@@ -4,7 +4,19 @@ import React, { useState, useEffect } from "react";
 import HangmanCanvas from "./HangmanCanvas";
 import "./HangmanGame.css"; // Import the additional CSS file
 
-const words = ["REACT", "JAVASCRIPT", "DEVELOPER", "HANGMAN", "COMPONENT"];
+const words = [
+    "APPLE", "BANANA", "CHERRY", "GRAPEFRUIT", "PINEAPPLE", "MANGO", "STRAWBERRY", "WATERMELON", "BLUEBERRY", "RASPBERRY", 
+    "BLACKBERRY", "PEAR", "PEACH", "PLUM", "APRICOT", "ORANGE", "LEMON", "LIME", "KIWI", "COCONUT", "AVOCADO", "FIG", 
+    "POMEGRANATE", "GRAPE", "PAPAYA", "GUAVA", "PASSIONFRUIT", "DRAGONFRUIT", "TANGERINE", "NECTARINE", "MELON", 
+    "CRANBERRY", "KUMQUAT", "CUCUMBER", "TOMATO", "BROCCOLI", "SPINACH", "CARROT", "POTATO", "PUMPKIN", "SQUASH", 
+    "LETTUCE", "CABBAGE", "ONION", "GARLIC", "PEPPER", "RADISH", "TURNIP", "BEET", "PARSNIP", "CELERY", "ZUCCHINI", 
+    "KALE", "CAULIFLOWER", "BRUSSELS", "ARTICHOKE", "EGGPLANT", "OKRA", "ASPARAGUS", "CORN", "PEA", "BEAN", 
+    "LENTIL", "CHICKPEA", "SOYBEAN", "PEANUT", "ALMOND", "CASHEW", "WALNUT", "PISTACHIO", "PECAN", "HAZELNUT", 
+    "MACADAMIA", "SUNFLOWER", "SESAME", "FLAXSEED", "CHIA", "QUINOA", "BARLEY", "OAT", "RICE", "WHEAT", "MILLET", 
+    "BUCKWHEAT", "RYE", "SPELT", "AMARANTH", "SORGHUM", "TEFF", "FARRO", "BULGUR", "WILDRICE", "MAPLE", "HONEY", 
+    "CHOCOLATE", "VANILLA", "CINNAMON", "GINGER", "NUTMEG", "TURMERIC", "SAFFRON", "CLOVE", "THYME", "OREGANO"
+];
+
 
 const HangmanGame = () => {
     const [word, setWord] = useState("");
@@ -50,9 +62,8 @@ const HangmanGame = () => {
             <h1>Hangman Game</h1>
             <h5>
                 Hangman is a word-guessing game. Start a new game, guess letters
-                to reveal the word, and avoid drawing the hangman by making
-                incorrect guesses. Win by guessing the word before the hangman
-                is complete. Have fun!
+                to reveal the word. Win by guessing the word before the hangman
+                is complete. You only have 6 Guesses! Have fun!
             </h5>
             <HangmanCanvas mistakes={mistakes} />
             <div className="word-display">
